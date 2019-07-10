@@ -1,0 +1,52 @@
+﻿body, html {
+    height: 100%;
+    background-image: url("https://2w1tdo1pewgg3twxhe42ygwx-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/front-banner-spiral.jpg");
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+.content2 {
+    position: fixed;
+    color: #f1f1f1;
+    width: 100%;
+    padding-top: 20px;
+}
+
+
+.home {
+    color: white;
+    text-align: center;
+
+
+}
+
+.textAlign {
+    text-align: left;
+    padding-left: 42%;
+}
+
+.homeAlign {
+    padding-top: 15%;
+    padding-left: 15%;
+}
+.funkyradio-default input[type="checkbox"]:checked ~ label:before {
+    color: #333;
+    background-color: #ccc;
+}
+

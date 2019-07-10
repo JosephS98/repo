@@ -1,0 +1,68 @@
+﻿@model IEnumerable<AccuVQuiz.Models.Question>
+
+@{
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index2</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Question1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Option1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Option2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Option3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Option4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Option5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Company.CompanyName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Question1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Option1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Option2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Option3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Option4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Option5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Company.CompanyName)
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+}
+
+</table>

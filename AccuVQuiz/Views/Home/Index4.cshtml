@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+
+}
+
+<h2>
+    Question #4
+
+</h2>
+
+<main>
+
+    <p>
+
+        What's the integral of the following function?
+       
+    </p>
+    <h3>
+
+        ∫tan(x)dx
+
+    </h3>
+
+    <form>
+        <div>
+            <label for="a">
+                <input id="a" type="radio" name="a-b-c-d-e"> c. ln|sec(x)| + C
+            </label>
+        </div>
+
+        <div>
+            <label for="b">
+                <input id="b" type="radio" name="a-b-c-d-e"> b. -ln|cos(x)| + C
+            </label>
+        </div>
+
+        <div>
+            <label for="c">
+                <input id="c" type="radio" name="a-b-c-d-e"> c. -ln|csc(x)| + C
+            </label>
+        </div>
+        <div>
+            <label for="d">
+                <input id="d" type="radio" name="a-b-c-d-e"> d. ln|sin(x)| + C
+            </label>
+        </div>
+        <div>
+            <label for="e">
+                <input id="e" type="radio" name="a-b-c-d-e"> e. None of the Above
+            </label>
+        </div>
+
+        <button type="button" onclick="location.href='@Url.Action("Index3", "Home")'">Back</button>
+        <button type="button" onclick="location.href='@Url.Action("Index5", "Home")'">Next</button>
+
+    </form>
+
+
+</main>

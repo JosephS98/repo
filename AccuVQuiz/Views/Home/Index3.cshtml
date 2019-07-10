@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+
+}
+
+    <h2>
+        Question #3
+
+    </h2>
+
+<main>
+
+    <p>
+
+        What's the most radioactive element on the periodic table?
+
+    </p>
+
+    <form>
+        <div>
+            <label for="a">
+                <input id="a" type="radio" name="a-b-c-d-e"> a. Oganesson
+            </label>
+        </div>
+
+        <div>
+            <label for="b">
+                <input id="b" type="radio" name="a-b-c-d-e"> b. Uranium
+            </label>
+        </div>
+
+        <div>
+            <label for="c">
+                <input id="c" type="radio" name="a-b-c-d-e"> c. Polonium
+            </label>
+        </div>
+        <div>
+            <label for="d">
+                <input id="d" type="radio" name="a-b-c-d-e"> d. Plutonium
+            </label>
+        </div>
+        <div>
+            <label for="e">
+                <input id="e" type="radio" name="a-b-c-d-e"> e. None of the Above
+            </label>
+        </div>
+
+        <button type="button" onclick="location.href='@Url.Action("Index2", "Home")'">Back</button>
+        <button type="button" onclick="location.href='@Url.Action("Index4", "Home")'">Next</button>
+
+    </form>
+
+
+</main>

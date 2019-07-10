@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+
+}
+
+<h2>
+    Question #5
+
+</h2>
+
+<main>
+
+    <p>
+
+        How many countries are there in the world?
+
+    </p>
+
+    <form>
+        <div>
+            <label for="a">
+                <input id="a" type="radio" name="a-b-c-d-e"> a. 200
+            </label>
+        </div>
+
+        <div>
+            <label for="b">
+                <input id="b" type="radio" name="a-b-c-d-e"> b. 198
+            </label>
+        </div>
+
+        <div>
+            <label for="c">
+                <input id="c" type="radio" name="a-b-c-d-e"> c. 196
+            </label>
+        </div>
+        <div>
+            <label for="d">
+                <input id="d" type="radio" name="a-b-c-d-e"> d. 194
+            </label>
+        </div>
+        <div>
+            <label for="e">
+                <input id="e" type="radio" name="a-b-c-d-e"> e. None of the Above
+            </label>
+        </div>
+
+        <button type="button" onclick="location.href='@Url.Action("Index4", "Home")'">Back</button>
+        <button type="button" onclick="location.href='@Url.Action("Index6", "Home")'">Next</button>
+
+    </form>
+
+
+</main>

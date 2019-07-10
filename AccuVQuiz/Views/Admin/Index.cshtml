@@ -1,0 +1,36 @@
+﻿@model IEnumerable<AccuVQuiz.Models.AdminChange>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Admin Change: ")
+        </th>
+        <th>
+            @Html.Label("Admin Password: ")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminLogin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminPassword)
+        </td>
+        
+    </tr>
+}
+
+</table>

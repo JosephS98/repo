@@ -1,0 +1,47 @@
+﻿
+@{
+}
+   
+        <div class="home">
+          
+            <h2>
+
+                Welcome Joey
+
+            </h2>
+
+
+
+            <form>
+                <div class="textAlign">
+                    <div>
+                        Q: <input type="text" placeholder="Add question" required>
+                    </div>
+                    <div>
+                        a: <input type="text" placeholder="Add option" required>
+                    </div>
+                    <div>
+                        b: <input type="text" placeholder="Add option" required>
+                    </div>
+                    <div>
+                        c: <input type="text" placeholder="Add option" required>
+                    </div>
+                    <div>
+                        d: <input type="text" placeholder="Add option" required>
+                    </div>
+                    <div>
+                        e. None of the above
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("addQuestion", "Home")'">Add</button>
+                    </div>
+                    <div>
+
+                        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Admin", "Home")'">Back</button>
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    

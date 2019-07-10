@@ -1,0 +1,62 @@
+﻿
+@model AccuVQuiz.Models.Question
+
+
+@{
+    ViewData["Title"] = "Home Page";
+
+
+}
+
+<h2>
+    Question #2
+
+</h2>
+
+<main>
+
+    <p>
+
+        @Model.Question1
+
+    </p>
+
+    <form>
+        <div>
+            <label for="a">
+                <input id="a" type="radio" name="a-b-c-d-e"> @Model.Option1
+            </label>
+        </div>
+
+        <div>
+            <label for="b">
+                <input id="b" type="radio" name="a-b-c-d-e"> @Model.Option2
+            </label>
+        </div>
+
+        <div>
+            <label for="c">
+                <input id="c" type="radio" name="a-b-c-d-e"> @Model.Option3
+            </label>
+        </div>
+        <div>
+            <label for="d">
+                <input id="d" type="radio" name="a-b-c-d-e"> @Model.Option4
+            </label>
+        </div>
+        <div>
+            <label for="e">
+                <input id="e" type="radio" name="a-b-c-d-e"> @Model.Option5
+            </label>
+        </div>
+
+
+        <button type="button" onclick="location.href='@Url.Action("Index1", "Home")'">Back</button>
+        <button type="button" onclick="location.href='@Url.Action("Index3", "Home")'">Next</button>
+
+
+
+    </form>
+
+
+</main>
