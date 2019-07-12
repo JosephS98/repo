@@ -35,6 +35,7 @@ namespace AccuVQuiz.Controllers
 
             var final = new Question()
             {
+
                 Question1 = question[0].Question1,
                 Option1 = question[0].Option1,
                 Option2 = question[0].Option2,
@@ -42,6 +43,7 @@ namespace AccuVQuiz.Controllers
                 Option4 = question[0].Option4,
                 Option5 = question[0].Option5
             };
+
 
             return View(final);
         }
