@@ -1,13 +1,13 @@
 ﻿body, html {
     height: 100%;
-    background-image: url("https://2w1tdo1pewgg3twxhe42ygwx-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/front-banner-spiral.jpg");
+    /*background-image: url("https://2w1tdo1pewgg3twxhe42ygwx-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/front-banner-spiral.jpg");*/
 }
 
 #myVideo {
     position: fixed;
     right: 0;
     bottom: 0;
-    z-index: 3;
+    z-index: -3;
     min-width: 100%;
     min-height: 100%;
 }
