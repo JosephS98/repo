@@ -2,77 +2,25 @@
 @model AccuVQuiz.Models.Question
 
 @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Home Page";
 }
 
+
+<p>
+    @Model.Question1
+</p>
+
+
+<form>
+    <div class="textAlign">
+        @Html.Partial("_QuestionPartial")
+        <div>
+            <button type="button" id="submitButton" class="btn btn-primary">Next</button>
+
+            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("quizStart", "Home")'">Back</button>
+        </div>
+    </div>
+</form>
+
     
-        <h2>
-            Question X
-        </h2>
-
-
-        
-
-        @{
-            /*
-
-            int x = Model.QuestionID;
-
-
-            for (int i = 0; i < MAX; i++)
-            {
-
-                x = Model.QuestionID + i;
-
-            }
-            int questionNum = x;
-                */
-        }
-
-        <p>
-            @Model.Question1
-        </p>
-
-
-
-        <form>
-            <div class="textAlign">
-
-
-                <div class="funkyradio-default">
-                    <div>
-                        <input type="checkbox" name="checkbox" id="checkbox1" checked />
-                        <label for="checkbox1">@Model.Option1)</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="checkbox" id="checkbox2" />
-                        <label for="checkbox2">@Model.Option2</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="checkbox" id="checkbox3" />
-                        <label for="checkbox3">@Model.Option3</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="checkbox" id="checkbox4" />
-
-                        <label for="checkbox4">@Model.Option4</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="checkbox" id="checkbox5" />
-                        <label for="checkbox5">@Model.Option5</label>
-                    </div>r
-
-                </div>
-
-                
-                <div >
-                    <button type="button"  id="target" class="btn btn-primary" onclick="location.href='@Url.Action("Index1", "Home")'">Next</button>
-
-                    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("quizStart", "Home")'">Back</button>
-                </div>
-            </div>
-        </form>
-
-
-            
-

@@ -1,23 +1,21 @@
 ﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Home Page";
 }
 
-    
-        <div class="home">
-            <video autoplay muted loop id="myVideo">
-                <source src="https://2w1tdo1pewgg3twxhe42ygwx-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/Infiniux_Brand_Pattern_Header_HQ_S2.mp4" type="video/mp4">
 
-            </video>
+    
+<div class="home">
+    <video autoplay muted loop id="myVideo">
+        <source src="https://2w1tdo1pewgg3twxhe42ygwx-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/Infiniux_Brand_Pattern_Header_HQ_S2.mp4" type="video/mp4">
+
+    </video>
 
             <div class="content2">
 
                 <h1>Welcome to the</h1>
 
-                <img src="https://2w1tdo1pewgg3twxhe42ygwx-wpengine.netdna-ssl.com/wp-content/themes/infiniux/public/images/logo.png" alt="Infiniux" />
-
-                <h1>Survey!</h1>
-
-            </div>
+                <h1>Survey!</h1>    
 
 
             <div class="homeAlign">
@@ -55,12 +53,8 @@
                 <div>
                     <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Admin", "Home")'">Admin Login </button>
                 </div>
-
-
             </div>
-
         </div>
     
-
-
+        </div>
 
