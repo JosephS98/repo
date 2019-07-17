@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuestionTrackerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QuestionTrackerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AdminChange">
           <Key>
             <PropertyRef Name="AdminID" />
@@ -19,6 +19,14 @@
           </Key>
           <Property Name="CompanyID" Type="int" Nullable="false" />
           <Property Name="CompanyName" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dataInsertion">
+          <Key>
+            <PropertyRef Name="questionID" />
+          </Key>
+          <Property Name="questionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="companyID" Type="int" />
+          <Property Name="options" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Questions">
           <Key>
@@ -55,6 +63,7 @@
         <EntityContainer Name="QuestionTrackerModelStoreContainer">
           <EntitySet Name="AdminChange" EntityType="Self.AdminChange" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dataInsertion" EntityType="Self.dataInsertion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Question__Compan__4D94879B" Association="Self.FK__Question__Compan__4D94879B">
@@ -62,8 +71,7 @@
             <End Role="Questions" EntitySet="Questions" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuestionTrackerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -125,7 +133,16 @@
             <End Role="Company" EntitySet="Companies" />
             <End Role="Questions" EntitySet="Questions" />
           </AssociationSet>
+          <EntitySet Name="dataInsertions" EntityType="QuestionTrackerModel.dataInsertion" />
         </EntityContainer>
+        <EntityType Name="dataInsertion">
+          <Key>
+            <PropertyRef Name="questionID" />
+          </Key>
+          <Property Name="questionID" Type="Int32" Nullable="false" />
+          <Property Name="companyID" Type="Int32" />
+          <Property Name="options" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -168,6 +185,15 @@
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dataInsertions">
+            <EntityTypeMapping TypeName="QuestionTrackerModel.dataInsertion">
+              <MappingFragment StoreEntitySet="dataInsertion">
+                <ScalarProperty Name="options" ColumnName="options" />
+                <ScalarProperty Name="companyID" ColumnName="companyID" />
+                <ScalarProperty Name="questionID" ColumnName="questionID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -5,22 +5,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Home Page";
 }
+<div class="home">
 
 
-<p>
-    @Model.Question1
-</p>
 
+    <form>
+        <div class="textAlign">
+            
+                @Html.Partial("_QuestionPartial")
 
-<form>
-    <div class="textAlign">
-        @Html.Partial("_QuestionPartial")
-        <div>
-            <button type="button" id="submitButton" class="btn btn-primary">Next</button>
+            
+            <div>
+                <button type="button" id="submitButton" class="btn btn-primary">Next</button>
 
-            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("quizStart", "Home")'">Back</button>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("quizStart", "Home")'">Back</button>
+            </div>
         </div>
-    </div>
-</form>
+    </form>
 
-    
+    </div>
