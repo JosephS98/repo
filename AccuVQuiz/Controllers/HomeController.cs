@@ -33,26 +33,17 @@ namespace AccuVQuiz.Controllers
         {
             List<Question> question = DB.Questions.Where(x => x.CompanyID == 1).ToList();
 
-            var final = new Question()
-            {
+   
 
-                Question1 = question[0].Question1,
-                Option1 = question[0].Option1,
-                Option2 = question[0].Option2,
-                Option3 = question[0].Option3,
-                Option4 = question[0].Option4,
-                Option5 = question[0].Option5
-            };
-
-
-            return View(final);
+            return View(question);
         }
         
-        public PartialViewResult GetNextQuestion(int questionID)
+        public PartialViewResult GetNextQuestion(int companyID)
         {
             
-            List<Question> question = DB.Questions.Where(x => x.CompanyID == questionID).ToList();
-
+            List<Question> question = DB.Questions.Where(x => x.CompanyID == 1).ToList();
+         
+            /*
             var nextQuestion = new Question()
             {
                 Question1 = question[questionID].Question1,
@@ -62,15 +53,22 @@ namespace AccuVQuiz.Controllers
                 Option4 = question[questionID].Option4,
                 Option5 = question[questionID].Option5
             };
-
-            return PartialView("_QuestionPartial", nextQuestion);
+            */
+            return PartialView("_QuestionPartial", question);
         }
         [HttpPost]
-        public ActionResult SaveData(string getOptions)
+        public ActionResult SaveData(/*int getQuestion, int getCompany,*/string option1, string option2,string option3,string option4,string option5 )
         {
             dataInsertion dataInsertion = new dataInsertion
-            {               
-               options = getOptions,
+            {
+                option1 = option1,
+                option2 = option2,
+                option3 = option3,
+                option4 = option4,
+                option5 = option5,
+                //questionID = getQuestion,
+                //companyID = getCompany,
+
             };
            try
              {
@@ -80,7 +78,7 @@ namespace AccuVQuiz.Controllers
 
          DB.dataInsertions.Add(dataInsertion);
          DB.SaveChanges();
-       // RedirectToAction("Home");
+      // RedirectToAction("Home");
                 }
              }
            catch (Exception e)

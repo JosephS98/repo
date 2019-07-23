@@ -24,9 +24,13 @@
           <Key>
             <PropertyRef Name="questionID" />
           </Key>
-          <Property Name="questionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="questionID" Type="int" Nullable="false" />
           <Property Name="companyID" Type="int" />
-          <Property Name="options" Type="nvarchar(max)" />
+          <Property Name="option1" Type="nvarchar(max)" />
+          <Property Name="option2" Type="nvarchar(max)" />
+          <Property Name="option3" Type="nvarchar(max)" />
+          <Property Name="option4" Type="nvarchar(max)" />
+          <Property Name="option5" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Questions">
           <Key>
@@ -141,7 +145,11 @@
           </Key>
           <Property Name="questionID" Type="Int32" Nullable="false" />
           <Property Name="companyID" Type="Int32" />
-          <Property Name="options" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="option1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="option2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="option3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="option4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="option5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -191,7 +199,11 @@
           <EntitySetMapping Name="dataInsertions">
             <EntityTypeMapping TypeName="QuestionTrackerModel.dataInsertion">
               <MappingFragment StoreEntitySet="dataInsertion">
-                <ScalarProperty Name="options" ColumnName="options" />
+                <ScalarProperty Name="option5" ColumnName="option5" />
+                <ScalarProperty Name="option4" ColumnName="option4" />
+                <ScalarProperty Name="option3" ColumnName="option3" />
+                <ScalarProperty Name="option2" ColumnName="option2" />
+                <ScalarProperty Name="option1" ColumnName="option1" />
                 <ScalarProperty Name="companyID" ColumnName="companyID" />
                 <ScalarProperty Name="questionID" ColumnName="questionID" />
               </MappingFragment>

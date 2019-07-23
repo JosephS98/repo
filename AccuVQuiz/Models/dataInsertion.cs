@@ -15,7 +15,11 @@ namespace AccuVQuiz.Models
     public partial class dataInsertion
     {
         public int questionID { get; set; }
-        public int? companyID { get; set; }
-        public string options { get; set; }
+        public Nullable<int> companyID { get; set; }
+        public string option1 { get; set; }
+        public string option2 { get; set; }
+        public string option3 { get; set; }
+        public string option4 { get; set; }
+        public string option5 { get; set; }
     }
 }
