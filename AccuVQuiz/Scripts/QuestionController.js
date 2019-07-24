@@ -1,6 +1,6 @@
 
 
-j = 1;
+var j = 1;
 
 
 var $option1 = $('#option1');
@@ -25,43 +25,15 @@ var $option5 = $('#option5');
 //});
 
 
-$("#increment").click(function () {
 
-    j++;
-    console.log(j)
-    $.ajax({
-
-        url: "/Home/GetNextQuestion",
-        type: "POST",
-        dataType: 'json',
-        contentType: "application/json; charset=utf-8",
-        data: j,
-        success: function (data) {
-            if (data == null) {
-                alert("Something went wrong");
-            }
-        },
-        failure: function (data) {
-            alert(data.dataText);
-        },
-        error: function (data) {
-            alert(data.dataText);
-        }
-    });
-
-});
 $("#submitButton").click(function () {
 
-  
 
     var Options = {};
 
-    
 
     $questions = $('#optionData');
 
-
-    
 
     for (i = 1; i < 6; i++) {
         if ($questions.find('#option' + i).prop('checked')) {
@@ -75,16 +47,9 @@ $("#submitButton").click(function () {
 
     }
 
- 
 
-    //console.log(results);
     console.log(JSON.stringify(Options));
     
-
-    
-    
-    
-
         
     $.ajax({
 
@@ -105,5 +70,28 @@ $("#submitButton").click(function () {
             alert(data.dataText);
         }
     });
+
+    j++;
+
+    $.ajax({
+
+        url: "/Home/Index1",
+        type: "GET",
+        dataType: 'json',
+        contentType: "application/json; charset=utf-8",
+        data: { 'questionNum': j },
+        success: function (data) {
+            if (data == null) {
+                alert("Something went wrong");
+            }
+        },
+        failure: function (data) {
+            alert(data.dataText);
+        },
+        error: function (data) {
+            alert(data.dataText);
+        }
+    });
+    
 });
     

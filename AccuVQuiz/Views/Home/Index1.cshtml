@@ -1,11 +1,7 @@
 ﻿
+@model AccuVQuiz.Models.Question
 
-@model List<Question>
 
-@foreach (Question item in Model)
-{
-    <div>@item.Disease</div>
-}
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Home Page";
@@ -18,38 +14,41 @@
         <div class="textAlign">
 
             <div id="optionData">
+               #@Model.questionNum. @Model.Question1
 
-            </div>
-            <div class="textAlign">
-                <div class="funkyradio-default">
-                    <div>
-                        <input id="option1" type="checkbox" name="option1" />
-                        <p id="option1Question"></p>
-                    </div>
-                    <div>
-                        <input id="option2" type="checkbox" name="option2" />
+            
+                <div class="textAlign">
+                    <div class="funkyradio-default">
+                        <div>
+                            <input id="option1" type="checkbox" name="option1" />
+                            @Model.Option1
+                        </div>
+                        <div>
+                            <input id="option2" type="checkbox" name="option2" />
+                            @Model.Option2
 
+                        </div>
+                        <div>
+                            <input id="option3" type="checkbox" name="option3" />
+                            @Model.Option3
 
-                    </div>
-                    <div>
-                        <input id="option3" type="checkbox" name="option3" />
+                        </div>
+                        <div>
+                            <input id="option4" type="checkbox" name="optio4" />
+                            @Model.Option4
 
-
-                    </div>
-                    <div>
-                        <input id="option4" type="checkbox" name="optio4" />
-
-
-                    </div>
-                    <div>
-                        <input id="option5" type="checkbox" name="option5" />
-
+                        </div>
+                        <div>
+                            <input id="option5" type="checkbox" name="option5" />
+                            @Model.Option5
+                        </div>
                     </div>
                 </div>
 
                 <script>
+                    /*
                     var i;
-                    var model = '@Model';
+
                     var text = "";
                     console.log("What is this? " + model);
                     for (i = 0; i < model.length; i++) {
@@ -65,6 +64,9 @@
                     document.getElementById("option3").innerHTML = text;
                     document.getElementById("option4").innerHTML = text;
                     document.getElementById("option5").innerHTML = text;
+                    */
+                    
+                  //  location.reload(true);
                 </script>
 
             </div>
@@ -72,7 +74,7 @@
             <div>
 
                 <button type="button" id="submitButton" class="btn btn-primary">Next</button>
-
+                
                 <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("quizStart", "Home")'">Back</button>
             </div>
         </div>

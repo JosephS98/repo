@@ -29,21 +29,22 @@ namespace AccuVQuiz.Controllers
             return View();
         }
 
-        public ActionResult Index1()
+        public ActionResult Index1(int questionNum =1)
         {
-            List<Question> question = DB.Questions.Where(x => x.CompanyID == 1).ToList();
+            
 
-   
+            Question question = DB.Questions.Where(x => x.CompanyID == 1 && x.questionNum == questionNum).FirstOrDefault();
+
 
             return View(question);
         }
-        
+        /*
         public PartialViewResult GetNextQuestion(int companyID)
         {
             
             List<Question> question = DB.Questions.Where(x => x.CompanyID == 1).ToList();
          
-            /*
+            
             var nextQuestion = new Question()
             {
                 Question1 = question[questionID].Question1,
@@ -53,9 +54,10 @@ namespace AccuVQuiz.Controllers
                 Option4 = question[questionID].Option4,
                 Option5 = question[questionID].Option5
             };
-            */
+            
             return PartialView("_QuestionPartial", question);
         }
+        */
         [HttpPost]
         public ActionResult SaveData(/*int getQuestion, int getCompany,*/string option1, string option2,string option3,string option4,string option5 )
         {
