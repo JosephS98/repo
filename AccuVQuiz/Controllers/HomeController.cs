@@ -38,30 +38,11 @@ namespace AccuVQuiz.Controllers
 
             return View(question);
         }
-        /*
-        public PartialViewResult GetNextQuestion(int companyID)
-        {
-            
-            List<Question> question = DB.Questions.Where(x => x.CompanyID == 1).ToList();
-         
-            
-            var nextQuestion = new Question()
-            {
-                Question1 = question[questionID].Question1,
-                Option1 = question[questionID].Option1,
-                Option2 = question[questionID].Option2,
-                Option3 = question[questionID].Option3,
-                Option4 = question[questionID].Option4,
-                Option5 = question[questionID].Option5
-            };
-            
-            return PartialView("_QuestionPartial", question);
-        }
-        */
+      
         [HttpPost]
-        public ActionResult SaveData(/*int getQuestion, int getCompany,*/string option1, string option2,string option3,string option4,string option5 )
+        public ActionResult SaveData(int companyID, int questionID, string option1, string option2,string option3,string option4,string option5 )
         {
-            dataInsertion dataInsertion = new dataInsertion
+            SurveyData dataInsertion = new dataInsertion
             {
                 option1 = option1,
                 option2 = option2,

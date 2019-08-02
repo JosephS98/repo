@@ -1,31 +1,99 @@
 
 
-var j = 1;
+$("#submit").click(function () {
+
+    $(document).ready(function () {
+
+        $('#gone').css({
+
+            'visibility': 'hidden',
+
+        });
+
+        $("#AccuV").click(function (even) {
+
+            alert($(this).prop("value"));
+
+        });
+        $("#Nexius").click(function (even) {
+
+            alert($(this).prop("value"));
+
+        });
+        $("#Velex").click(function (even) {
+
+            alert($(this).prop("value"));
+
+        });
+        $("#VelexSI").click(function (even) {
+
+            alert($(this).prop("value"));
+
+        });
+        $("#Intelgica").click(function (even) {
+
+            alert($(this).prop("value"));
+
+        });
+        $("#MyndCo").click(function (even) {
+
+            alert($(this).prop("value"));
+
+        });
+
+    });
+
+});
+
+    var object = {};
+    $anything = $('#questionAdd');
+
+    for (i = 1; i < 6; i++) {
 
 
-var $option1 = $('#option1');
-
-var $option2 = $('#option2');
-
-var $option3 = $('#option3');
-
-var $option4 = $('#option4');
-
-var $option5 = $('#option5');
-
-//var $getQuestion = $('#getQuestion')
-
-//var $getCompany = $('#getCompany')
-
-//This could be done better
-//$option1.change(function () {
- //   if ($option1.prop('checked')) {
-//options.option1
-  //  }
-//});
+        object['option' + i] = $anything.find('#option' + i).text(); //This will grab the text
 
 
+    }
+    object['companyID'] = companyID;
+    object['question'] = question;
+    console.log(JSON.stringify(object))
 
+
+    $.ajax({
+
+
+        url: "/Home/addQuestion",
+        type: "POST",
+        dataType: 'json',
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(object),
+        success: function (data) {
+            if (data == null) {
+                alert("Something went wrong");
+            }
+        },
+        failure: function (data) {
+            alert(data.dataText);
+        },
+        error: function (data) {
+            alert(data.dataText);
+        }
+    });
+
+    
+
+$("#verify").click(function () {
+
+    if ($("#a").val() == 'joeys' && $("#b") == 'x') {
+
+        window.location.replace = "/home/addQuestion"
+
+    } else
+
+        alert("Incorrect username or password.")
+
+});
 $("#submitButton").click(function () {
 
 
@@ -41,13 +109,13 @@ $("#submitButton").click(function () {
 
         } else {
 
-            Options['option' + i] = 'off';
+            Options['option' + i] = null;
 
         }
 
     }
-
-
+    Options['companyID'] = companyID;
+    Options['questionID'] = questionID;
     console.log(JSON.stringify(Options));
     
         
@@ -71,19 +139,21 @@ $("#submitButton").click(function () {
         }
     });
 
+    
+
     j++;
 
     $.ajax({
 
-        url: "/Home/Index1",
+        url: "/Home/GetNextQuestion",
         type: "GET",
-        dataType: 'json',
-        contentType: "application/json; charset=utf-8",
-        data: { 'questionNum': j },
+        data: { 'id':companyID, 'questionNum': j },
         success: function (data) {
             if (data == null) {
                 alert("Something went wrong");
             }
+            $('#questionArea').empty()
+            $('#questionArea').html(data);
         },
         failure: function (data) {
             alert(data.dataText);
