@@ -1,50 +1,56 @@
 ﻿
 @{
-     Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Home Page";
 
 }
-   
-        <div class="home">
-          
-            <h2>
-
-                Welcome Joey
-
-            </h2>
-
-
-
-            <form>
-                <div class="textAlign">
-                    <div>
-                        Q: <input type="text" placeholder="Add question" required>
-                    </div>
-                    <div>
-                        a: <input type="text" placeholder="Add option" required>
-                    </div>
-                    <div>
-                        b: <input type="text" placeholder="Add option" required>
-                    </div>
-                    <div>
-                        c: <input type="text" placeholder="Add option" required>
-                    </div>
-                    <div>
-                        d: <input type="text" placeholder="Add option" required>
-                    </div>
-                    <div>
-                        e. None of the above
-                    </div>
-                    <div>
-                        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("addQuestion", "Home")'">Add</button>
-                    </div>
-                    <div>
-
-                        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Admin", "Home")'">Back</button>
-
-                    </div>
-                </div>
-            </form>
-
+    <div id="gone">
+        <div>
+            <text>
+                Select the company for which you want to add the questions.
+            </text>
         </div>
-    
+        <button type="button" id="AccuV" class="btn btn-primary" value="1">AccuV</button>
+        <button type="button" id="Nexius" class="btn btn-secondary" value="2">Nexius</button>
+        <button type="button" id="Velex" class="btn btn-success" value="3">Velex</button>
+        <button type="button" id="VelexSI" class="btn btn-danger" value="3">VelexSI</button>
+        <button type="button" id="Intelgica" class="btn btn-warning" value="4">Intelgica</button>
+        <button type="button" id="MyndCo" class="btn btn-info" value="5">MyndCo</button>
+    </div>
+
+<div id="questionAdd">
+    <div class="textAlign">
+        <div>
+            Q: <input id="question" type="text" placeholder="Add question" required>
+        </div>
+        <div>
+            A: <input id="option1" type="text" placeholder="Add option" required>
+        </div>
+        <div>
+            B: <input id="option2" type="text" placeholder="Add option" required>
+        </div>
+        <div>
+            C: <input id="option3" type="text" placeholder="Add option" required>
+        </div>
+        <div>
+            D: <input id="option4" type="text" placeholder="Add option" required>
+        </div>
+        <div>
+            E: <input id="option5" type="text" placeholder="Add option" required>
+        </div>
+
+
+
+
+    </div>
+</div>
+<div>
+    <button type="button" id="submit" class="btn btn-primary" onclick="location.href='@Url.Action("addQuestion", "Home")'">Add</button>
+
+
+
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Home")'">Back to Start</button>
+
+
+
+</div>

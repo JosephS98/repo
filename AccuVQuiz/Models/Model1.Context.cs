@@ -29,6 +29,6 @@ namespace AccuVQuiz.Models
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<dataInsertion> dataInsertions { get; set; }
+        public virtual DbSet<SurveyData> SurveyDatas { get; set; }
     }
 }

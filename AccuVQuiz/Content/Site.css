@@ -32,21 +32,22 @@
 .home {
     color: white;
     text-align: center;
-
-
 }
 
 .textAlign {
     text-align: left;
-    
 }
 
 .homeAlign {
     padding-top: 15%;
     padding-left: 15%;
 }
+
 .funkyradio-default input[type="checkbox"]:checked ~ label:before {
     color: #333;
     background-color: #ccc;
 }
 
+.colour {
+    color: black;
+}

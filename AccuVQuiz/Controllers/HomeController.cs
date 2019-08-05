@@ -11,6 +11,7 @@ namespace AccuVQuiz.Controllers
     public class HomeController : Controller
     {
         QuestionTrackerEntities1 DB = new QuestionTrackerEntities1();
+        TakeInfo VM = new TakeInfo();
 
         public ActionResult Admin()
         {
@@ -29,47 +30,37 @@ namespace AccuVQuiz.Controllers
             return View();
         }
 
-        public ActionResult Index1(int questionNum =1)
+        public ActionResult Index1(int companyID=1, int questionNum=1)
         {
             
 
-            Question question = DB.Questions.Where(x => x.CompanyID == 1 && x.questionNum == questionNum).FirstOrDefault();
+            Question question = DB.Questions.Where(x => x.CompanyID == companyID && x.questionNum == questionNum).FirstOrDefault();
 
 
             return View(question);
         }
-        /*
-        public PartialViewResult GetNextQuestion(int companyID)
+        
+        public PartialViewResult GetNextQuestion( int companyID, int questionNum)
         {
-            
-            List<Question> question = DB.Questions.Where(x => x.CompanyID == 1).ToList();
-         
-            
-            var nextQuestion = new Question()
-            {
-                Question1 = question[questionID].Question1,
-                Option1 = question[questionID].Option1,
-                Option2 = question[questionID].Option2,
-                Option3 = question[questionID].Option3,
-                Option4 = question[questionID].Option4,
-                Option5 = question[questionID].Option5
-            };
-            
+
+            Question question = DB.Questions.Where(x => x.CompanyID == companyID && x.questionNum == questionNum).FirstOrDefault();
+
+
             return PartialView("_QuestionPartial", question);
         }
-        */
+        
         [HttpPost]
-        public ActionResult SaveData(/*int getQuestion, int getCompany,*/string option1, string option2,string option3,string option4,string option5 )
+        public ActionResult SaveData(int companyID, int questionID,string option1, string option2,string option3,string option4,string option5)
         {
-            dataInsertion dataInsertion = new dataInsertion
+            SurveyData SurveyData = new SurveyData
             {
                 option1 = option1,
                 option2 = option2,
                 option3 = option3,
                 option4 = option4,
                 option5 = option5,
-                //questionID = getQuestion,
-                //companyID = getCompany,
+                questionID = questionID,
+                companyID = companyID,
 
             };
            try
@@ -78,7 +69,7 @@ namespace AccuVQuiz.Controllers
              {
 
 
-         DB.dataInsertions.Add(dataInsertion);
+         DB.SurveyDatas.Add(SurveyData);
          DB.SaveChanges();
       // RedirectToAction("Home");
                 }
@@ -95,9 +86,13 @@ namespace AccuVQuiz.Controllers
 
 
 
-        public ActionResult quizStart()
+        public ActionResult quizStart(int companyID=1)
         {
-            return View();
+
+            Company companyName = DB.Companies.Where(x => x.CompanyID == companyID).First();
+
+
+            return View(companyName);
        }
        
     }

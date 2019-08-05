@@ -1,4 +1,5 @@
-﻿
+﻿@model AccuVQuiz.Models.Company
+
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Home Page";
@@ -9,13 +10,14 @@
             <source src="https://2w1tdo1pewgg3twxhe42ygwx-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/Infiniux_Brand_Pattern_Header_HQ_S2.mp4" type="video/mp4">
 
         </video>
+        
         <div class="content2">
             <p>
-                <h2> Welcome to the nexius survery!</h2>
+                <h2> Welcome to the @Model.CompanyName survery!</h2>
 
                 <div class="quizGuest">
 
-                    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index1", "Home")'">Guest </button>
+                    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index1", "Home", new {CompanyID = Model.CompanyID})'">Guest </button>
                 </div>
 
 
