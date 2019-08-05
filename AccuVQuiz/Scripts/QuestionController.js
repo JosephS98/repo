@@ -1,9 +1,10 @@
 
+
 var companyID;
 var questionID;
 var j = 1;
 $(document).ready(function () {
-    
+
 
     $("#AccuV").click(function (even) {
 
@@ -58,22 +59,22 @@ $(document).ready(function () {
             'visibility': 'hidden',
 
         });
-       
+
     });
-    
+
 });
 
 //$("#submit").click(function () {
 
-   
+
 //    if (companyID == null) {
 
 //        alert("Please chose a company.")
 
 //    }
-   
-        
-   
+
+
+
 
 //var object = {};
 //$anything = $('#questionAdd');
@@ -114,9 +115,8 @@ $(document).ready(function () {
 //});
 
 
-
 $("#verify").click(function () {
-    
+
     if ($("#a").val() == 'joeys' && $("#b").val() == 'x') {
 
         window.location.href = "/home/addQuestion";
@@ -134,11 +134,11 @@ $("#verify").click(function () {
 });
 
 $("#submitButton").click(function () {
-   
-   
-   
+
+
+
     var Options = {};
-    
+
 
     $questions = $('#optionData');
 
@@ -156,7 +156,6 @@ $("#submitButton").click(function () {
     }
     Options['companyID'] = companyID;
     Options['questionID'] = questionID;
-   
     console.log(JSON.stringify(Options));
     /*
 
@@ -166,7 +165,7 @@ $("#submitButton").click(function () {
         type: "POST",
         dataType: 'json',
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(Options), //{ 'getQuestion': $('#getQuestion').val() }, { 'getCompany': $('#getCompany').val() }),                                                                                  
+        data: JSON.stringify(Options), //{ 'getQuestion': $('#getQuestion').val() }, { 'getCompany': $('#getCompany').val() }),
         success: function (data) {
             if (data == null) {
                 alert("Something went wrong");
@@ -180,6 +179,7 @@ $("#submitButton").click(function () {
         }
     });
     */
+
 
     j++;
     console.log(j);

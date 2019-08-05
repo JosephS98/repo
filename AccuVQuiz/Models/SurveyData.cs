@@ -22,5 +22,6 @@ namespace AccuVQuiz.Models
         public string option3 { get; set; }
         public string option4 { get; set; }
         public string option5 { get; set; }
+        public int UserID { get; set; }
     }
 }

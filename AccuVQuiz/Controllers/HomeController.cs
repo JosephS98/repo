@@ -32,14 +32,15 @@ namespace AccuVQuiz.Controllers
 
         public ActionResult Index1(int companyID=1, int questionNum=1)
         {
-            
+
 
             Question question = DB.Questions.Where(x => x.CompanyID == companyID && x.questionNum == questionNum).FirstOrDefault();
 
 
             return View(question);
         }
-        
+
+
         public PartialViewResult GetNextQuestion( int companyID, int questionNum)
         {
 
@@ -48,7 +49,7 @@ namespace AccuVQuiz.Controllers
 
             return PartialView("_QuestionPartial", question);
         }
-        
+
         [HttpPost]
         public ActionResult SaveData(int companyID, int questionID,string option1, string option2,string option3,string option4,string option5)
         {
@@ -94,6 +95,6 @@ namespace AccuVQuiz.Controllers
 
             return View(companyName);
        }
-       
+
     }
 }

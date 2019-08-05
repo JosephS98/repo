@@ -5,9 +5,9 @@ using System.Web;
 
 namespace AccuVQuiz.Models
 {
+
     public class TakeInfo
     {
 
-       
     }
 }
