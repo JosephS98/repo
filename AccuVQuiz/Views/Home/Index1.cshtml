@@ -1,13 +1,18 @@
 ﻿
 @model AccuVQuiz.Models.Question
 
-
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+
     ViewData["Title"] = "Home Page";
 }
+    <div class="home">
+        <div class="content2">
 
-
-    <div id="questionArea">
-        @Html.Partial("_QuestionPartial")
+            <div id="questionArea">
+                @Html.Partial("_QuestionPartial")
+            </div>
+           
+        </div>
+        
     </div>

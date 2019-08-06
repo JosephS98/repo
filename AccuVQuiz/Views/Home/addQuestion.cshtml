@@ -1,9 +1,5 @@
 ﻿
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewData["Title"] = "Home Page";
-
-}
+<div class="home">
     <div id="gone">
         <div>
             <text>
@@ -44,7 +40,7 @@
 
     </div>
 </div>
-<div>
+    <div>
     <button type="button" id="submit" class="btn btn-primary" onclick="location.href='@Url.Action("addQuestion", "Home")'">Add</button>
 
 
@@ -53,4 +49,5 @@
 
 
 
+</div>
 </div>

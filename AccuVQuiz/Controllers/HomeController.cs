@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Collections.Generic;
 
 namespace AccuVQuiz.Controllers
 {
@@ -12,7 +11,7 @@ namespace AccuVQuiz.Controllers
     {
         QuestionTrackerEntities1 DB = new QuestionTrackerEntities1();
         TakeInfo VM = new TakeInfo();
-
+        int i = 1;
         public ActionResult Admin()
         {
             return View();
@@ -35,17 +34,17 @@ namespace AccuVQuiz.Controllers
 
 
             Question question = DB.Questions.Where(x => x.CompanyID == companyID && x.questionNum == questionNum).FirstOrDefault();
-
-
+           
+            
             return View(question);
         }
 
 
         public PartialViewResult GetNextQuestion( int companyID, int questionNum)
         {
-
-            Question question = DB.Questions.Where(x => x.CompanyID == companyID && x.questionNum == questionNum).FirstOrDefault();
-
+            i++;
+            Question question = DB.Questions.Where(x => x.CompanyID == companyID && x.questionNum == i).FirstOrDefault();
+            
 
             return PartialView("_QuestionPartial", question);
         }

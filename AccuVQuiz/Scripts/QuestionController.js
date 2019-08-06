@@ -133,7 +133,7 @@ $("#verify").click(function () {
     }
 });
 
-$("#submitButton").click(function () {
+$("#submitButton1").click(function () {
 
 
 
@@ -202,5 +202,6 @@ $("#submitButton").click(function () {
             alert(data.dataText);
         }
     });
+
 
 });

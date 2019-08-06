@@ -1,63 +1,60 @@
-﻿
-
-
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewData["Title"] = "Home Page";
+﻿@{ 
+    Layout = null;
 }
 <div class="home">
-    
 
 
-    
 
-        <div class="textAlign">
 
-            <div id="optionData">
-                #@Model.questionNum. @Model.Question1
 
-                <script> 
+    <div class="textAlign">
+
+        <div id="optionData">
+            #@Model.questionNum. @Model.Question1
+
+            <script>
+
                     var questionID =@Model.QuestionID;
                     var companyID= @Model.CompanyID;
-                </script>
-                <div class="textAlign">
-                    <div class="funkyradio-default">
-                        <div>
-                            <input id="option1" type="checkbox" name="option1" value="@Model.Option1">
-                            @Model.Option1
-                           
-                        </div>
-                        <div>
-                            <input id="option2" type="checkbox" name="option2" value="@Model.Option2" />
-                            @Model.Option2
+            </script>
+            <div class="textAlign">
+                <div class="funkyradio-default">
+                    <div>
+                        <input id="option1" type="checkbox" name="option1" value="@Model.Option1">
+                        @Model.Option1
 
-                        </div>
-                        <div>
-                            <input id="option3" type="checkbox" name="option3" value=@Model.Option3 />
-                            @Model.Option3
+                    </div>
+                    <div>
+                        <input id="option2" type="checkbox" name="option2" value="@Model.Option2" />
+                        @Model.Option2
 
-                        </div>
-                        <div>
-                            <input id="option4" type="checkbox" name="option4" value=@Model.Option4 />
-                            @Model.Option4
+                    </div>
+                    <div>
+                        <input id="option3" type="checkbox" name="option3" value=@Model.Option3 />
+                        @Model.Option3
 
-                        </div>
-                        <div>
-                            <input id="option5" type="checkbox" name="option5" value="@Model.Option5" />
-                            @Model.Option5
-                        </div>
+                    </div>
+                    <div>
+                        <input id="option4" type="checkbox" name="option4" value=@Model.Option4 />
+                        @Model.Option4
+
+                    </div>
+                    <div>
+                        <input id="option5" type="checkbox" name="option5" value="@Model.Option5" />
+                        @Model.Option5
                     </div>
                 </div>
-
             </div>
-
             <div>
 
-                <button type="button" id="submitButton" class="btn btn-primary">Next</button>
+                <button type="button" id="submitButton1" class="btn btn-primary">Next</button>
 
                 <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("quizStart", "Home")'">Back</button>
             </div>
         </div>
-    
+
+       
+    </div>
+
 
 </div>
