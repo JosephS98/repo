@@ -42,8 +42,8 @@ namespace AccuVQuiz.Controllers
 
         public PartialViewResult GetNextQuestion( int companyID, int questionNum)
         {
-            i++;
-            Question question = DB.Questions.Where(x => x.CompanyID == companyID && x.questionNum == i).FirstOrDefault();
+            
+            Question question = DB.Questions.Where(x => x.CompanyID == companyID && x.questionNum == questionNum).FirstOrDefault();
             
 
             return PartialView("_QuestionPartial", question);

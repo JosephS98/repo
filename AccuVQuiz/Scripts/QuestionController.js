@@ -133,11 +133,9 @@ $("#verify").click(function () {
     }
 });
 
-$("#submitButton1").click(function () {
 
-    goToNextPage();
 
-});
+    
  goToNextPage = function() {
 
 
@@ -162,7 +160,7 @@ $("#submitButton1").click(function () {
     Options['companyID'] = companyID;
     Options['questionID'] = questionID;
     console.log(JSON.stringify(Options));
-    /*
+    
 
     $.ajax({
 
@@ -183,7 +181,7 @@ $("#submitButton1").click(function () {
             alert(data.dataText);
         }
     });
-    */
+    
 
 
     j++;
