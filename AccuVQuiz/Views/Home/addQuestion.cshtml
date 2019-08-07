@@ -1,5 +1,9 @@
-﻿
-<div class="home">
+﻿@{ 
+     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Home Page";
+}
+<div class="backround">
+<div id="home">
     <div id="gone">
         <div>
             <text>
@@ -15,39 +19,45 @@
     </div>
 
 <div id="questionAdd">
-    <div class="textAlign">
-        <div>
-            Q: <input id="question" type="text" placeholder="Add question" required>
+    <div id="textbox_padding">
+        Question
+        <div class="colour">
+            <input id="question" type="text" placeholder="Add question" required>
         </div>
-        <div>
-            A: <input id="option1" type="text" placeholder="Add option" required>
+        First Option
+        <div class="colour">
+            <input id="option1" type="text" placeholder="Add option" required>
         </div>
-        <div>
-            B: <input id="option2" type="text" placeholder="Add option" required>
+        Second Option
+        <div class="colour">
+            <input id="option2" type="text" placeholder="Add option" required>
         </div>
-        <div>
-            C: <input id="option3" type="text" placeholder="Add option" required>
+        Third Option
+        <div class="colour">
+            <input id="option3" type="text" placeholder="Add option" required>
         </div>
-        <div>
-            D: <input id="option4" type="text" placeholder="Add option" required>
+        Fourth Option
+        <div class="colour">
+            <input id="option4" type="text" placeholder="Add option" required>
         </div>
-        <div>
-            E: <input id="option5" type="text" placeholder="Add option" required>
+        Fifth Option
+        <div class="colour">
+            <input id="option5" type="text" placeholder="Add option" required>
         </div>
-
-
-
 
     </div>
+
+
+   
 </div>
-    <div>
+<div id="buttonPad">
     <button type="button" id="submit" class="btn btn-primary" onclick="location.href='@Url.Action("addQuestion", "Home")'">Add</button>
 
 
 
     <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Home")'">Back to Start</button>
 
-
+</div>
 
 </div>
 </div>

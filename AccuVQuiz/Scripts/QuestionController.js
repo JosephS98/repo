@@ -64,14 +64,14 @@ $(document).ready(function () {
 
 });
 
-//$("#submit").click(function () {
+$("#submit").click(function () {
 
 
-//    if (companyID == null) {
+    if (companyID == null) {
 
-//        alert("Please chose a company.")
-
-//    }
+        alert("Please chose a company.")
+    }
+    });
 
 
 
@@ -134,6 +134,11 @@ $("#verify").click(function () {
 });
 
 $("#submitButton1").click(function () {
+
+    goToNextPage();
+
+});
+ goToNextPage = function() {
 
 
 
@@ -204,4 +209,4 @@ $("#submitButton1").click(function () {
     });
 
 
-});
+};

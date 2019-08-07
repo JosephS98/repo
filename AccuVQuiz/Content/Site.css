@@ -1,4 +1,4 @@
-﻿.home {
+﻿.backround {
     height: 100%;
     background-image: url("https://2w1tdo1pewgg3twxhe42ygwx-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/front-banner-spiral.jpg");
     position: fixed;
@@ -6,8 +6,19 @@
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-   
+    
 }
+#home {
+    color: white;
+    
+    text-align: center;
+}
+
+html, body{
+    margin:0;
+    padding: 0;
+}
+
 
 #myVideo {
     position: fixed;
@@ -23,24 +34,25 @@
     background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
     width: 100%;
+   
 }
 
 .content2 {
     position: fixed;
     color: #f1f1f1;
-    width: 100%;
-    padding-top: 20px;
-    text-align: center;
+    width: 50%;
+    
 }
 
+#contentAlign{
 
-.home {
-    color: white;
-   
+    text-align:left;
+
 }
 
 .textAlign {
     text-align: left;
+    padding-left: 42%
 }
 
 .homeAlign {
@@ -54,4 +66,22 @@
 }
 .colour{
   color: black;
+}
+
+#questionAdd{
+
+    padding-top: 50px;
+
+}
+
+#gone{
+
+    padding:20px;
+
+}
+
+#buttonPad{
+
+    padding: 20px;
+
 }
