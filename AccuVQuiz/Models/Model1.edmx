@@ -54,6 +54,30 @@
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="UserName" Type="nchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QuestionTracker.dbo.SurveyPercentage' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SurveyPercentage">
+          <Key>
+            <PropertyRef Name="Question" />
+          </Key>
+          <Property Name="Question" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Option1" Type="nvarchar(max)" />
+          <Property Name="O1" Type="int" />
+          <Property Name="O1%" Type="decimal" Precision="38" Scale="16" />
+          <Property Name="Option2" Type="nvarchar(max)" />
+          <Property Name="O2" Type="int" />
+          <Property Name="O2%" Type="decimal" Precision="38" Scale="16" />
+          <Property Name="Option3" Type="nvarchar(max)" />
+          <Property Name="O3" Type="int" />
+          <Property Name="O3%" Type="decimal" Precision="38" Scale="16" />
+          <Property Name="Option4" Type="nvarchar(max)" />
+          <Property Name="O4" Type="int" />
+          <Property Name="O4%" Type="decimal" Precision="38" Scale="16" />
+          <Property Name="Option5" Type="nvarchar(max)" />
+          <Property Name="O5" Type="int" />
+          <Property Name="O5%" Type="decimal" Precision="38" Scale="16" />
+          <Property Name="TotalQuestions" Type="int" />
+        </EntityType>
         <Association Name="FK__Question__Compan__4D94879B">
           <End Role="Company" Type="Self.Company" Multiplicity="1" />
           <End Role="Questions" Type="Self.Questions" Multiplicity="*" />
@@ -72,6 +96,27 @@
           <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SurveyData" EntityType="Self.SurveyData" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SurveyPercentage" EntityType="Self.SurveyPercentage" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SurveyPercentage].[Question] AS [Question], 
+    [SurveyPercentage].[Option1] AS [Option1], 
+    [SurveyPercentage].[O1] AS [O1], 
+    [SurveyPercentage].[O1%] AS [O1%], 
+    [SurveyPercentage].[Option2] AS [Option2], 
+    [SurveyPercentage].[O2] AS [O2], 
+    [SurveyPercentage].[O2%] AS [O2%], 
+    [SurveyPercentage].[Option3] AS [Option3], 
+    [SurveyPercentage].[O3] AS [O3], 
+    [SurveyPercentage].[O3%] AS [O3%], 
+    [SurveyPercentage].[Option4] AS [Option4], 
+    [SurveyPercentage].[O4] AS [O4], 
+    [SurveyPercentage].[O4%] AS [O4%], 
+    [SurveyPercentage].[Option5] AS [Option5], 
+    [SurveyPercentage].[O5] AS [O5], 
+    [SurveyPercentage].[O5%] AS [O5%], 
+    [SurveyPercentage].[TotalQuestions] AS [TotalQuestions]
+    FROM [dbo].[SurveyPercentage] AS [SurveyPercentage]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__Question__Compan__4D94879B" Association="Self.FK__Question__Compan__4D94879B">
             <End Role="Company" EntitySet="Company" />
             <End Role="Questions" EntitySet="Questions" />
@@ -141,6 +186,7 @@
             <End Role="Questions" EntitySet="Questions" />
           </AssociationSet>
           <EntitySet Name="SurveyDatas" EntityType="QuestionTrackerModel.SurveyData" />
+          <EntitySet Name="SurveyPercentages" EntityType="QuestionTrackerModel.SurveyPercentage" />
         </EntityContainer>
         <EntityType Name="SurveyData">
           <Key>
@@ -154,6 +200,28 @@
           <Property Name="option3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="option4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="option5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SurveyPercentage">
+          <Key>
+            <PropertyRef Name="Question" />
+          </Key>
+          <Property Name="Question" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Option1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="O1" Type="Int32" />
+          <Property Name="Option2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="O2" Type="Int32" />
+          <Property Name="Option3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="O3" Type="Int32" />
+          <Property Name="Option4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="O4" Type="Int32" />
+          <Property Name="Option5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="O5" Type="Int32" />
+          <Property Name="TotalQuestions" Type="Int32" />
+          <Property Name="O1_" Type="Decimal" Precision="38" Scale="16" />
+          <Property Name="O2_" Type="Decimal" Precision="38" Scale="16" />
+          <Property Name="O3_" Type="Decimal" Precision="38" Scale="16" />
+          <Property Name="O4_" Type="Decimal" Precision="38" Scale="16" />
+          <Property Name="O5_" Type="Decimal" Precision="38" Scale="16" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -212,6 +280,29 @@
                 <ScalarProperty Name="companyID" ColumnName="companyID" />
                 <ScalarProperty Name="questionID" ColumnName="questionID" />
                 <ScalarProperty Name="SurveyDataID" ColumnName="SurveyDataID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SurveyPercentages">
+            <EntityTypeMapping TypeName="QuestionTrackerModel.SurveyPercentage">
+              <MappingFragment StoreEntitySet="SurveyPercentage">
+                <ScalarProperty Name="O5_" ColumnName="O5%" />
+                <ScalarProperty Name="O4_" ColumnName="O4%" />
+                <ScalarProperty Name="O3_" ColumnName="O3%" />
+                <ScalarProperty Name="O2_" ColumnName="O2%" />
+                <ScalarProperty Name="O1_" ColumnName="O1%" />
+                <ScalarProperty Name="TotalQuestions" ColumnName="TotalQuestions" />
+                <ScalarProperty Name="O5" ColumnName="O5" />
+                <ScalarProperty Name="Option5" ColumnName="Option5" />
+                <ScalarProperty Name="O4" ColumnName="O4" />
+                <ScalarProperty Name="Option4" ColumnName="Option4" />
+                <ScalarProperty Name="O3" ColumnName="O3" />
+                <ScalarProperty Name="Option3" ColumnName="Option3" />
+                <ScalarProperty Name="O2" ColumnName="O2" />
+                <ScalarProperty Name="Option2" ColumnName="Option2" />
+                <ScalarProperty Name="O1" ColumnName="O1" />
+                <ScalarProperty Name="Option1" ColumnName="Option1" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

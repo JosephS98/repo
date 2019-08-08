@@ -5,13 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a49bdc56dd4c4e14a183c076a93ab88d" Name="Diagram1">
-        <EntityTypeShape EntityType="QuestionTrackerModel.AdminChange" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuestionTrackerModel.AdminChange" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="QuestionTrackerModel.Company" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QuestionTrackerModel.Question" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuestionTrackerModel.User" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuestionTrackerModel.User" Width="1.5" PointX="2.875" PointY="5" IsExpanded="true" />
         <AssociationConnector Association="QuestionTrackerModel.FK__Question__Compan__4D94879B" ManuallyRouted="false" />
 
         <EntityTypeShape EntityType="QuestionTrackerModel.SurveyData" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="QuestionTrackerModel.SurveyPercentage" Width="1.5" PointX="5.375" PointY="5" />
 
       </Diagram>
     </edmx:Diagrams>

@@ -10,7 +10,7 @@ namespace AccuVQuiz.Controllers
     public class HomeController : Controller
     {
         QuestionTrackerEntities1 DB = new QuestionTrackerEntities1();
-        TakeInfo VM = new TakeInfo();
+        ViewModel VM = new ViewModel();
         int i = 1;
         public ActionResult Admin()
         {
@@ -83,8 +83,12 @@ namespace AccuVQuiz.Controllers
 
         }
 
+        public ActionResult Index2()
+        {
 
+            return View();
 
+        }
 
         public ActionResult quizStart(int companyID=1)
         {
