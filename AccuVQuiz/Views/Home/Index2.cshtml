@@ -1,5 +1,5 @@
 ﻿
-@model AccuVQuiz.Models.SurveyPercentage
+@model AccuVQuiz.Models.ViewModel
 
 
 @{
@@ -15,15 +15,21 @@
 </p>
 
 
+@foreach (var item in Model.surveyList)
+{
+    <h3>@item.Question</h3>
+    <p>@item.Option1:@item.O1_%</p>
+    <p>@item.Option2:@item.O2_%</p>
+    <p>@item.Option3:@item.O3_%</p>
+    <p>@item.Option4:@item.O4_%</p>
+    <p>@item.Option5:@item.O5_%</p>
 
-@Model.Option1
-@Model.Option2
-@Model.Option3
-@Model.Option4
-@Model.Option5
 
-@Model.O1_
-@Model.O2_
-@Model.O3_
-@Model.O4_
-@Model.O5_
+}
+
+
+
+
+
+
+

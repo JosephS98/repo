@@ -58,24 +58,26 @@
 warning 6002: The table/view 'QuestionTracker.dbo.SurveyPercentage' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SurveyPercentage">
           <Key>
+            <PropertyRef Name="ID" />
             <PropertyRef Name="Question" />
           </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Question" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Option1" Type="nvarchar(max)" />
           <Property Name="O1" Type="int" />
-          <Property Name="O1%" Type="decimal" Precision="38" Scale="16" />
+          <Property Name="O1%" Type="decimal" Precision="5" Scale="2" />
           <Property Name="Option2" Type="nvarchar(max)" />
           <Property Name="O2" Type="int" />
-          <Property Name="O2%" Type="decimal" Precision="38" Scale="16" />
+          <Property Name="O2%" Type="decimal" Precision="5" Scale="2" />
           <Property Name="Option3" Type="nvarchar(max)" />
           <Property Name="O3" Type="int" />
-          <Property Name="O3%" Type="decimal" Precision="38" Scale="16" />
+          <Property Name="O3%" Type="decimal" Precision="5" Scale="2" />
           <Property Name="Option4" Type="nvarchar(max)" />
           <Property Name="O4" Type="int" />
-          <Property Name="O4%" Type="decimal" Precision="38" Scale="16" />
+          <Property Name="O4%" Type="decimal" Precision="5" Scale="2" />
           <Property Name="Option5" Type="nvarchar(max)" />
           <Property Name="O5" Type="int" />
-          <Property Name="O5%" Type="decimal" Precision="38" Scale="16" />
+          <Property Name="O5%" Type="decimal" Precision="5" Scale="2" />
           <Property Name="TotalQuestions" Type="int" />
         </EntityType>
         <Association Name="FK__Question__Compan__4D94879B">
@@ -98,6 +100,7 @@ warning 6002: The table/view 'QuestionTracker.dbo.SurveyPercentage' does not hav
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SurveyPercentage" EntityType="Self.SurveyPercentage" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [SurveyPercentage].[ID] AS [ID], 
     [SurveyPercentage].[Question] AS [Question], 
     [SurveyPercentage].[Option1] AS [Option1], 
     [SurveyPercentage].[O1] AS [O1], 
@@ -203,25 +206,27 @@ warning 6002: The table/view 'QuestionTracker.dbo.SurveyPercentage' does not hav
         </EntityType>
         <EntityType Name="SurveyPercentage">
           <Key>
+            <PropertyRef Name="ID" />
             <PropertyRef Name="Question" />
           </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Question" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Option1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="O1" Type="Int32" />
+          <Property Name="O1_" Type="Decimal" Precision="5" Scale="2" />
           <Property Name="Option2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="O2" Type="Int32" />
+          <Property Name="O2_" Type="Decimal" Precision="5" Scale="2" />
           <Property Name="Option3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="O3" Type="Int32" />
+          <Property Name="O3_" Type="Decimal" Precision="5" Scale="2" />
           <Property Name="Option4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="O4" Type="Int32" />
+          <Property Name="O4_" Type="Decimal" Precision="5" Scale="2" />
           <Property Name="Option5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="O5" Type="Int32" />
+          <Property Name="O5_" Type="Decimal" Precision="5" Scale="2" />
           <Property Name="TotalQuestions" Type="Int32" />
-          <Property Name="O1_" Type="Decimal" Precision="38" Scale="16" />
-          <Property Name="O2_" Type="Decimal" Precision="38" Scale="16" />
-          <Property Name="O3_" Type="Decimal" Precision="38" Scale="16" />
-          <Property Name="O4_" Type="Decimal" Precision="38" Scale="16" />
-          <Property Name="O5_" Type="Decimal" Precision="38" Scale="16" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -286,23 +291,24 @@ warning 6002: The table/view 'QuestionTracker.dbo.SurveyPercentage' does not hav
           <EntitySetMapping Name="SurveyPercentages">
             <EntityTypeMapping TypeName="QuestionTrackerModel.SurveyPercentage">
               <MappingFragment StoreEntitySet="SurveyPercentage">
-                <ScalarProperty Name="O5_" ColumnName="O5%" />
-                <ScalarProperty Name="O4_" ColumnName="O4%" />
-                <ScalarProperty Name="O3_" ColumnName="O3%" />
-                <ScalarProperty Name="O2_" ColumnName="O2%" />
-                <ScalarProperty Name="O1_" ColumnName="O1%" />
                 <ScalarProperty Name="TotalQuestions" ColumnName="TotalQuestions" />
+                <ScalarProperty Name="O5_" ColumnName="O5%" />
                 <ScalarProperty Name="O5" ColumnName="O5" />
                 <ScalarProperty Name="Option5" ColumnName="Option5" />
+                <ScalarProperty Name="O4_" ColumnName="O4%" />
                 <ScalarProperty Name="O4" ColumnName="O4" />
                 <ScalarProperty Name="Option4" ColumnName="Option4" />
+                <ScalarProperty Name="O3_" ColumnName="O3%" />
                 <ScalarProperty Name="O3" ColumnName="O3" />
                 <ScalarProperty Name="Option3" ColumnName="Option3" />
+                <ScalarProperty Name="O2_" ColumnName="O2%" />
                 <ScalarProperty Name="O2" ColumnName="O2" />
                 <ScalarProperty Name="Option2" ColumnName="Option2" />
+                <ScalarProperty Name="O1_" ColumnName="O1%" />
                 <ScalarProperty Name="O1" ColumnName="O1" />
                 <ScalarProperty Name="Option1" ColumnName="Option1" />
                 <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
