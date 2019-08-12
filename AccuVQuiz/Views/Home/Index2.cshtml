@@ -8,28 +8,33 @@
 
 }
 
-<p>
+    <div  class="backround">
+        <div id="home">
 
-    Thank you for completing the survey. Here is the survey data.
+            <p>
 
-</p>
+                Thank you for completing the survey. Here is the survey data.
 
-
-@foreach (var item in Model.surveyList)
-{
-    <h3>@item.Question</h3>
-    <p>@item.Option1:@item.O1_%</p>
-    <p>@item.Option2:@item.O2_%</p>
-    <p>@item.Option3:@item.O3_%</p>
-    <p>@item.Option4:@item.O4_%</p>
-    <p>@item.Option5:@item.O5_%</p>
+            </p>
 
 
-}
+            @foreach (var item in Model.surveyList)
+            {
+                <h3>@item.Question</h3>
+                <p>@item.Option1:@item.O1_%</p>
+                <p>@item.Option2:@item.O2_%</p>
+                <p>@item.Option3:@item.O3_%</p>
+                <p>@item.Option4:@item.O4_%</p>
+                <p>@item.Option5:@item.O5_%</p>
+
+
+            }
+
+
+        </div>
 
 
 
 
 
-
-
+    </div>

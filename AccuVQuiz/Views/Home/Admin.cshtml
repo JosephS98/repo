@@ -4,9 +4,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Home Page";
 }
-    
-        <div class="home">
-            
+
+    <video autoplay muted loop id="myVideo">
+        <source src="https://2w1tdo1pewgg3twxhe42ygwx-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/Infiniux_Brand_Pattern_Header_HQ_S2.mp4" type="video/mp4">
+
+    </video>
+
+    <div class="content2">
+        <div id="home">
+
+
             <h2>
 
                 Admin Login Page
@@ -17,13 +24,13 @@
 
                 <div class="textAlign">
                     <div>
-                        Admin login <input class="colour" type="text"  id="a" placeholder="Username"  required>
+                        Admin login <input class="colour" type="text" id="a" placeholder="Username" required>
                     </div>
                     <div>
-                        Password <input class="colour"type="password"  id="b" placeholder="Password" >
+                        Password <input class="colour" type="password" id="b" placeholder="Password">
                     </div>
                     <div>
-                        <button type="button" id="verify"class="btn btn-primary">Login</button>
+                        <button type="button" id="verify" class="btn btn-primary">Login</button>
 
 
                         <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Home")'">Back</button>
@@ -33,4 +40,4 @@
             </form>
 
         </div>
-    
+    </div>

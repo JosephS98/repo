@@ -1,12 +1,10 @@
 ﻿.backround {
     height: 100%;
-    background-image: url("https://2w1tdo1pewgg3twxhe42ygwx-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/front-banner-spiral.jpg");
-    position: fixed;
+    background-image: url(../img/bg.jpg);
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-    
 }
 #home {
     color: white;
@@ -45,8 +43,14 @@
 .content2 {
     position: fixed;
     color: #f1f1f1;
-    width: 50%;
+    width: 100%;
+    text-align : center;
     
+}
+.logoAlign{
+    padding-top:50px;
+    width: 120%
+
 }
 
 #contentAlign{

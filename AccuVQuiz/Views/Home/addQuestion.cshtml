@@ -2,62 +2,67 @@
      Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Home Page";
 }
-<div class="backround">
-<div id="home">
-    <div id="gone">
-        <div>
-            <text>
-                Select the company for which you want to add the questions.
-            </text>
+
+    <video autoplay muted loop id="myVideo">
+        <source src="https://2w1tdo1pewgg3twxhe42ygwx-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/Infiniux_Brand_Pattern_Header_HQ_S2.mp4" type="video/mp4">
+
+    </video>
+    <div class="content2">
+        <div id="home">
+            <div id="gone">
+                <div>
+                    <text>
+                        Select the company for which you want to add the questions.
+                    </text>
+                </div>
+                <button type="button" id="AccuV" class="btn btn-primary" value="1">AccuV</button>
+                <button type="button" id="Nexius" class="btn btn-secondary" value="2">Nexius</button>
+                <button type="button" id="Velex" class="btn btn-success" value="3">Velex</button>
+                <button type="button" id="VelexSI" class="btn btn-danger" value="3">VelexSI</button>
+                <button type="button" id="Intelgica" class="btn btn-warning" value="4">Intelgica</button>
+                <button type="button" id="MyndCo" class="btn btn-info" value="5">MyndCo</button>
+            </div>
+
+            <div id="questionAdd">
+                <div id="textbox_padding">
+                    Question
+                    <div class="colour">
+                        <input id="question" type="text" placeholder="Add question" required>
+                    </div>
+                    First Option
+                    <div class="colour">
+                        <input id="option1" type="text" placeholder="Add option" required>
+                    </div>
+                    Second Option
+                    <div class="colour">
+                        <input id="option2" type="text" placeholder="Add option" required>
+                    </div>
+                    Third Option
+                    <div class="colour">
+                        <input id="option3" type="text" placeholder="Add option" required>
+                    </div>
+                    Fourth Option
+                    <div class="colour">
+                        <input id="option4" type="text" placeholder="Add option" required>
+                    </div>
+                    Fifth Option
+                    <div class="colour">
+                        <input id="option5" type="text" placeholder="Add option" required>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <div id="buttonPad">
+                <button type="button" id="submit" class="btn btn-primary" onclick="location.href='@Url.Action("addQuestion", "Home")'">Add</button>
+
+
+
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Home")'">Back to Start</button>
+
+            </div>
+
         </div>
-        <button type="button" id="AccuV" class="btn btn-primary" value="1">AccuV</button>
-        <button type="button" id="Nexius" class="btn btn-secondary" value="2">Nexius</button>
-        <button type="button" id="Velex" class="btn btn-success" value="3">Velex</button>
-        <button type="button" id="VelexSI" class="btn btn-danger" value="3">VelexSI</button>
-        <button type="button" id="Intelgica" class="btn btn-warning" value="4">Intelgica</button>
-        <button type="button" id="MyndCo" class="btn btn-info" value="5">MyndCo</button>
     </div>
-
-<div id="questionAdd">
-    <div id="textbox_padding">
-        Question
-        <div class="colour">
-            <input id="question" type="text" placeholder="Add question" required>
-        </div>
-        First Option
-        <div class="colour">
-            <input id="option1" type="text" placeholder="Add option" required>
-        </div>
-        Second Option
-        <div class="colour">
-            <input id="option2" type="text" placeholder="Add option" required>
-        </div>
-        Third Option
-        <div class="colour">
-            <input id="option3" type="text" placeholder="Add option" required>
-        </div>
-        Fourth Option
-        <div class="colour">
-            <input id="option4" type="text" placeholder="Add option" required>
-        </div>
-        Fifth Option
-        <div class="colour">
-            <input id="option5" type="text" placeholder="Add option" required>
-        </div>
-
-    </div>
-
-
-   
-</div>
-<div id="buttonPad">
-    <button type="button" id="submit" class="btn btn-primary" onclick="location.href='@Url.Action("addQuestion", "Home")'">Add</button>
-
-
-
-    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Home")'">Back to Start</button>
-
-</div>
-
-</div>
-</div>

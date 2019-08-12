@@ -46,10 +46,16 @@
                 </div>
             </div>
             <div>
+                @if(Model.questionNum == 5)
+                {
+                    <button type="button" onclick="finish();" id="finish" class="btn btn-primary">Finish</button>
+                } else
+                {
+                    <button type="button" onclick="goToNextPage();" id="submitButton1" class="btn btn-primary">Next</button>
+                }
+                
 
-                <button type="button" onclick="goToNextPage();" id="submitButton1" class="btn btn-primary">Next</button>
-
-                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("quizStart", "Home")'">Back</button>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("quizStart", "Home")'">Back To Start</button>
             </div>
         </div>
 
