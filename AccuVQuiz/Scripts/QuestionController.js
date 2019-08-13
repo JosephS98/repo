@@ -1,4 +1,4 @@
-
+var checked;
 var i = 1;
 var companyID;
 var questionID;
@@ -75,13 +75,17 @@ $("#submit").click(function () {
 
 finish = function () {
     var Options = {};
-
+    checked = 0;
 
     $questions = $('#optionData');
 
 
     for (var i = 1; i < 6; i++) {
         if ($questions.find('#option' + i).prop('checked')) {
+            if ($questions.find('#option' + i).prop('checked')) {
+
+                checked += 1;
+            }
             Options['option' + i] = $questions.find('#option' + i).val();
 
         } else {
@@ -91,32 +95,38 @@ finish = function () {
         }
 
     }
-    Options['companyID'] = companyID;
-    Options['questionID'] = questionID;
+    if (checked == 0) {
+
+        alert("Please check atleast one of the options.")
+
+    } else {
+
+        Options['companyID'] = companyID;
+        Options['questionID'] = questionID;
 
 
 
-    $.ajax({
+        $.ajax({
 
-        url: "/Home/SaveData",
-        type: "POST",
-        dataType: 'json',
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(Options), //{ 'getQuestion': $('#getQuestion').val() }, { 'getCompany': $('#getCompany').val() }),
-        success: function (data) {
-            if (data == null) {
-                alert("Something went wrong");
+            url: "/Home/SaveData",
+            type: "POST",
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(Options), //{ 'getQuestion': $('#getQuestion').val() }, { 'getCompany': $('#getCompany').val() }),
+            success: function (data) {
+                if (data == null) {
+                    alert("Something went wrong");
+                }
+            },
+            failure: function (data) {
+                alert(data.dataText);
+            },
+            error: function (data) {
+                alert(data.dataText);
             }
-        },
-        failure: function (data) {
-            alert(data.dataText);
-        },
-        error: function (data) {
-            alert(data.dataText);
-        }
-    });
-    window.location.href = "/home/Index2";
-
+        });
+        window.location.href = "/home/Index2";
+    }
 };
 
 //var object = {};
@@ -182,7 +192,7 @@ $("#verify").click(function () {
  goToNextPage = function() {
     
   
-  
+     checked = 0;
 
     var Options = {};
 
@@ -192,6 +202,10 @@ $("#verify").click(function () {
 
     for (var i = 1; i < 6; i++) { 
         if ($questions.find('#option' + i).prop('checked')) {
+            if ($questions.find('#option' + i).prop('checked')) {
+
+                checked += 1;
+            }
             Options['option' + i] = $questions.find('#option' + i).val();
 
         } else {
@@ -200,55 +214,60 @@ $("#verify").click(function () {
 
         }
 
-    }
-    Options['companyID'] = companyID;
-    Options['questionID'] = questionID;
-  
-    
+     }
+     if (checked == 0) {
 
-    $.ajax({
+         alert("Please check atleast one of the options.")
 
-        url: "/Home/SaveData",
-        type: "POST",
-        dataType: 'json',
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(Options), //{ 'getQuestion': $('#getQuestion').val() }, { 'getCompany': $('#getCompany').val() }),
-        success: function (data) {
-            if (data == null) {
-                alert("Something went wrong");
-            }
-        },
-        failure: function (data) {
-            alert(data.dataText);
-        },
-        error: function (data) {
-            alert(data.dataText);
-        }
-    });
-    
+     } else {
+         Options['companyID'] = companyID;
+         Options['questionID'] = questionID;
 
 
-    j++;
-    console.log(j);
-    $.ajax({
 
-        url: "/Home/GetNextQuestion",
-        type: "GET",
-        data: { 'companyID': companyID, 'questionNum': j },
-        success: function (data) {
-            if (data == null) {
-                alert("Something went wrong");
-            }
-            $('#questionArea').empty()
-            $('#questionArea').html(data);
-        },
-        failure: function (data) {
-            alert(data.dataText);
-        },
-        error: function (data) {
-            alert(data.dataText);
-        }
-    });
+         $.ajax({
 
-    
+             url: "/Home/SaveData",
+             type: "POST",
+             dataType: 'json',
+             contentType: "application/json; charset=utf-8",
+             data: JSON.stringify(Options), //{ 'getQuestion': $('#getQuestion').val() }, { 'getCompany': $('#getCompany').val() }),
+             success: function (data) {
+                 if (data == null) {
+                     alert("Something went wrong");
+                 }
+             },
+             failure: function (data) {
+                 alert(data.dataText);
+             },
+             error: function (data) {
+                 alert(data.dataText);
+             }
+         });
+
+
+
+         j++;
+         console.log(j);
+         $.ajax({
+
+             url: "/Home/GetNextQuestion",
+             type: "GET",
+             data: { 'companyID': companyID, 'questionNum': j },
+             success: function (data) {
+                 if (data == null) {
+                     alert("Something went wrong");
+                 }
+                 $('#questionArea').empty()
+                 $('#questionArea').html(data);
+             },
+             failure: function (data) {
+                 alert(data.dataText);
+             },
+             error: function (data) {
+                 alert(data.dataText);
+             }
+         });
+
+     }    
 };

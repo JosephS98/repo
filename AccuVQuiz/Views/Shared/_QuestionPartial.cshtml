@@ -1,65 +1,146 @@
-﻿@{ 
+﻿@{
     Layout = null;
 }
 
 
-<div class="home">
 
 
 
+
+
+
+<div id="optionData">
+    <div id="partialQuestion">
+        #@Model.questionNum. @Model.Question1
+    </div>
     <div class="textAlign">
-
-        <div id="optionData">
-            #@Model.questionNum. @Model.Question1
-
-            <script>
+        <script>
 
                     var questionID =@Model.QuestionID;
-                    var companyID= @Model.CompanyID;
-            </script>
-            
-                <div class="funkyradio-default">
-                    <div>
-                        <input id="option1" type="checkbox" name="option1" value="@Model.Option1">
-                        @Model.Option1
+                var companyID = @Model.CompanyID;
 
-                    </div>
-                    <div>
-                        <input id="option2" type="checkbox" name="option2" value="@Model.Option2" />
-                        @Model.Option2
+        </script>
 
-                    </div>
-                    <div>
-                        <input id="option3" type="checkbox" name="option3" value=@Model.Option3 />
-                        @Model.Option3
+        <div class="funkyradio-default">
+            <div id="questionSpacing">
+                <input id="option1" type="checkbox" name="option1" value="@Model.Option1">
+                @Model.Option1
 
-                    </div>
-                    <div>
-                        <input id="option4" type="checkbox" name="option4" value=@Model.Option4 />
-                        @Model.Option4
-
-                    </div>
-                    <div>
-                        <input id="option5" type="checkbox" name="option5" value="@Model.Option5" />
-                        @Model.Option5
-                    </div>
-                </div>
             </div>
-            <div>
-                @if(Model.questionNum == 5)
-                {
-                    <button type="button" onclick="finish();" id="finish" class="btn btn-primary">Finish</button>
-                } else
-                {
-                    <button type="button" onclick="goToNextPage();" id="submitButton1" class="btn btn-primary">Next</button>
-                }
-                
+            <div id="questionSpacing">
+                <input id="option2" type="checkbox" name="option2" value="@Model.Option2" />
+                @Model.Option2
 
-                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("quizStart", "Home")'">Back To Start</button>
+            </div>
+            <div id="questionSpacing">
+                <input id="option3" type="checkbox" name="option3" value=@Model.Option3 />
+                @Model.Option3
+
+            </div>
+            <div id="questionSpacing">
+                <input id="option4" type="checkbox" name="option4" value=@Model.Option4 />
+                @Model.Option4
+
+            </div>
+            <div id="questionSpacing">
+                <input id="option5" type="checkbox" name="option5" value="@Model.Option5" />
+                @Model.Option5
             </div>
         </div>
-
-       
     </div>
+
+    <div id="questionSpacing">
+        <div style="padding-right:75px;">
+            @if (Model.questionNum == 5)
+            {
+                <row style="padding-right:30px;">
+                    <button type="button" onclick="finish();" id="finish" class="btn btn-primary" style="width:100px; height:50px;font-size:20px;">Finish</button>
+                </row>
+            }
+            else
+            {
+                <row style="padding-right:30px;">
+                    <button type="button" onclick="goToNextPage();" id="submitButton1" class="btn btn-primary" style="width:100px; height:50px;font-size:20px;">Next</button>
+                </row>
+            }
+
+            <row>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("quizStart", "Home")'" style=" height:50px;font-size:20px;">Back To Start</button>
+            </row>
+        </div>
+    </div>
+</div>
+@*@if (Model.questionNum == 1)
+{
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <div id="box">
+        <div id="fontCursive">
+
+            <div> "I think it is possible</div>
+            <div>  for ordinary people to</div>
+            <div>  choose to be extraordinary."</div>
+            <div>-Elon Musk</div>
+
+        </div>
+    </div>
+}
+else if (Model.questionNum == 2)
+{
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <div id="box">
+        <div id="fontCursive">
+
+            <div> "If you don’t build your dream,</div>
+            <div>  someone else will hire you</div>
+            <div>  to help them build theirs."</div>
+            <div>-Dhirubhai Ambani</div>
+        </div>
+    </div>
+
+}
+else if (Model.questionNum == 3)
+{
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <div id="box">
+        <div id="fontCursive">
+
+            <div> "I think it is possible</div>
+            <div>  for ordinary people to</div>
+            <div>  choose to be extraordinary."</div>
+            <div>-Elon Musk</div>
+
+        </div>
+    </div>
+}
+else if (Model.questionNum == 4)
+{
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <div id="box">
+        <div id="fontCursive">
+
+            <div> "I think it is possible</div>
+            <div>  for ordinary people to</div>
+            <div>  choose to be extraordinary."</div>
+            <div>-Elon Musk</div>
+
+        </div>
+    </div>
+}
+else
+{
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <div id="box">
+        <div id="fontCursive">
+
+            <div> "I think it is possible</div>
+            <div>  for ordinary people to</div>
+            <div>  choose to be extraordinary."</div>
+            <div>-Elon Musk</div>
+
+        </div>
+    </div>
+}*@
+
+
 
 
