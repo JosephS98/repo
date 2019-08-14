@@ -182,7 +182,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="img\albert-einstein-quotes-03.jpg" />
+    <Content Include="img\alex-knight-Ys-DBJeX0nE-unsplash.jpg" />
+    <Content Include="img\Backround1.jpg" />
+    <Content Include="img\backround2.jpg" />
+    <Content Include="img\backround3.jpg" />
+    <Content Include="img\backround4.jpg" />
     <Content Include="img\bg.jpg" />
+    <Content Include="img\city.jpg" />
+    <Content Include="img\girl_with_ipad.jpg" />
+    <Content Include="img\joey infiniux .png" />
+    <Content Include="img\nexius-hero-web[229].jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

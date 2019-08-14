@@ -1,11 +1,20 @@
 ﻿.backround {
     height: 100%;
-    background-image: url(../img/bg.jpg);
+    background-image: url('../img/joey infiniux .png');
+    background-size: cover;
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
 }
+
+.two2 {
+    background-color:#2f0a5e;
+    opacity: 1;
+    z-index: -3
+}
+
+
 #home {
     color: white;
     
@@ -121,5 +130,15 @@
 #questionSpacing{
 
     padding-top:20px;
+
+}
+#finalPage{
+
+    font-size:30px;
+
+}
+#finalPagePercentages{
+
+    font-size:18px;
 
 }

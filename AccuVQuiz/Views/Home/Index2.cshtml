@@ -4,29 +4,34 @@
 
 @{
     ViewData["Title"] = "Home Page";
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
 
-    <div  class="backround">
+    <div  class="backround two2">
         <div id="home">
 
             <p>
+                <div id="finalPage">
+                    Thank you for completing the survey. Here is the survey data.
+               </div>
+</p>
 
-                Thank you for completing the survey. Here is the survey data.
+            
+                @foreach (var item in Model.surveyList)
 
-            </p>
-
-
-            @foreach (var item in Model.surveyList)
-            {
-                <h3>@item.Question</h3>
-                <p>@item.Option1:@item.O1_%</p>
-                <p>@item.Option2:@item.O2_%</p>
-                <p>@item.Option3:@item.O3_%</p>
-                <p>@item.Option4:@item.O4_%</p>
-                <p>@item.Option5:@item.O5_%</p>
-
+                {
+            <div id="finalPage">
+            <h3 style="text-decoration:underline;">@item.Question</h3>
+            </div>
+            <div id="finalPagePercentages">
+                <p>@item.O1_% of people chose @item.Option1</p>
+                <p>@item.O2_% of people chose @item.Option2</p>
+                <p>@item.O3_% of people chose @item.Option3</p>
+                <p>@item.O4_% of people chose @item.Option4</p>
+                <p>@item.O5_% of people chose @item.Option5</p>
+            </div>
 
             }
 
