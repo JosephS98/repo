@@ -172,20 +172,30 @@ $("#verify").click(function () {
 
     if ($("#a").val() == 'joeys' && $("#b").val() == 'x') {
 
-        window.location.href = "/home/addQuestion";
+        window.location.href = "/Question/Index2";
 
     } else {
         i += 1;
         alert("Incorrect username or password.");
     }
 
-    if (i == 5) {
+    if (i == 4) {
         alert("too many incorrect entries")
         window.location.href = "/home/Index";
 
     }
 });
 
+$("#verifyQuestions").click(function () {
+
+    if ($("#question").val() == null || $("#option1").val() == null || $("#option2").val() == null || $("#option3").val() == null || $("#option4").val() == null || $("#option5").val() == null) {
+
+        alert("At least one of the fields are blank.")
+
+    } 
+
+
+});
 
 
 

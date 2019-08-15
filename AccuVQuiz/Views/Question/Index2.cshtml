@@ -4,69 +4,85 @@
     ViewBag.Title = "Index2";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-<div class="home">
-<h2>List of Questions</h2>
+<video autoplay muted loop id="myVideo">
+    <source src="https://2w1tdo1pewgg3twxhe42ygwx-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/Infiniux_Brand_Pattern_Header_HQ_S2.mp4" type="video/mp4">
+
+</video>
 
 
-        <table class="table">
-    <tr>
-        <th>
-            @Html.Label("Company")
-        </th>
-        <th>
-            @Html.Label("Question")
-        </th>
-        <th>
-            @Html.Label("Option 1")
-        </th>
-        <th>
-            @Html.Label("Option 2")
-        </th>
-        <th>
-            @Html.Label("Option 3")
-        </th>
-        <th>
-            @Html.Label("Option 4")
-        </th>
-        <th>
-            @Html.Label("Option 5")
-        </th>
 
-        <th></th>
-    </tr>
+<div id="addQuestionSize">
+    <div class="content2">
+        <div class="home">
+            <h2>List of Questions</h2>
+
+
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.Label("Company")
+                    </th>
+                    <th>
+                        @Html.Label("Question")
+                    </th>
+                    <th>
+                        @Html.Label("Option 1")
+                    </th>
+                    <th>
+                        @Html.Label("Option 2")
+                    </th>
+                    <th>
+                        @Html.Label("Option 3")
+                    </th>
+                    <th>
+                        @Html.Label("Option 4")
+                    </th>
+                    <th>
+                        @Html.Label("Option 5")
+                    </th>
+
+                    <th></th>
+                </tr>
+        </div>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Question1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Option1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Option2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Option3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Option4)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Option5)
+                </td>
+
+                <td></td>
+            </tr>
+        }
+
+        </table>
     </div>
+</div>
+<div id="fixed">
 
-@foreach (var item in Model) {
-    <tr>
-          <td>
-            @Html.DisplayFor(modelItem => item.Company.CompanyName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Question1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Option1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Option2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Option3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Option4)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Option5)
-        </td>
-      
-        <td>
-            
-        </td>
-    </tr>
-}
 
-</table>
+    <row style="padding-right:15px;">
+        <button type="button" class="btn btn-primary" style=" height:50px; font-size:20px;" onclick="location.href='@Url.Action("addQuestion", "Home")'">Create New</button>
+    </row>
+    <button type="button" class="btn btn-primary" style="width:100px; height:50px; font-size:20px;"onclick="location.href='@Url.Action("Admin", "Home")'">Back</button>
+
+</div> 

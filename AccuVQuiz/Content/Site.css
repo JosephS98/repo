@@ -1,6 +1,6 @@
 ﻿.backround {
     height: 100%;
-    background-image: url('../img/joey infiniux .png');
+    background-image: url('../img/joey infiniux purple blur.png');
     background-size: cover;
     right: 0;
     bottom: 0;
@@ -57,7 +57,7 @@
     
 }
 .logoAlign{
-    padding-top:50px;
+    padding-top:150px;
     width: 120%
 
 }
@@ -140,5 +140,15 @@
 #finalPagePercentages{
 
     font-size:18px;
+
+}
+#fixed{
+
+    position:fixed;
+    padding-left:85%;
+}
+#addQuestionSize{
+
+    font-size: 25px;
 
 }

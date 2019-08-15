@@ -191,6 +191,8 @@
     <Content Include="img\city.jpg" />
     <Content Include="img\girl_with_ipad.jpg" />
     <Content Include="img\joey infiniux .png" />
+    <Content Include="img\joey infiniux purple blur.png" />
+    <Content Include="img\joey infiniux purple.png" />
     <Content Include="img\nexius-hero-web[229].jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
