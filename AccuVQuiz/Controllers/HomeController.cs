@@ -83,7 +83,7 @@ namespace AccuVQuiz.Controllers
 
         }
 
-        public ActionResult Index2(int companyID =1)
+        public ActionResult Index2(int companyID = 1)
         {
             
             VM.surveyList = DB.SurveyPercentages.Where(x => x.ID == companyID).ToList();

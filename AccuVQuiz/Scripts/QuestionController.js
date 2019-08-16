@@ -5,6 +5,7 @@ var questionID;
 var j = 1;
 $(document).ready(function () {
 
+   
 
     $("#AccuV").click(function (even) {
 
@@ -197,7 +198,27 @@ $("#verifyQuestions").click(function () {
 
 });
 
+//$("#CompanyVerify").click(function () {
 
+//    $.ajax({
+
+//        url: "/Home/Index2",
+//        type: "GET",
+//        data: { 'companyID': companyID },
+//        success: function (data) {
+//            if (data == null) {
+//                alert("Something went wrong");
+//            }
+//        },
+//        failure: function (data) {
+//            alert(data.dataText);
+//        },
+//        error: function (data) {
+//            alert(data.dataText);
+//        }
+//    });
+
+//});
 
  goToNextPage = function() {
     

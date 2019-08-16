@@ -54,7 +54,7 @@
             @if (Model.questionNum == 5)
             {
                 <row style="padding-right:30px;">
-                    <button type="button" onclick="finish();" id="finish" class="btn btn-primary" style="width:100px; height:50px;font-size:20px;">Finish</button>
+                    <button type="button" onclick="finish(); location.href='@Url.Action("Index2", "Home", new {CompanyID = Model.CompanyID})'" id="finish" class="btn btn-primary" style="width:100px; height:50px;font-size:20px;">Finish</button>
                 </row>
             }
             else
